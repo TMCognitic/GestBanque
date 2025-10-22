@@ -8,6 +8,13 @@ namespace GestBanque.Models
 {
     public class Courant
     {
+        //double <= double, Courant
+        public static double operator+(double solde, Courant courant)
+        {
+            return (solde < 0 ? 0 : solde) + (courant.Solde < 0 ? 0 : courant.Solde);
+        }
+
+
         private double _ligneDeCredit;
         public string Numero { get; set; }
         public double Solde { get; private set; }
