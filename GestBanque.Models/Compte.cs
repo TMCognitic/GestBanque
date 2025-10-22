@@ -1,6 +1,8 @@
-﻿namespace GestBanque.Models
+﻿using Microsoft.VisualBasic;
+
+namespace GestBanque.Models
 {
-    public abstract class Compte
+    public abstract class Compte : ICustomer, IBanker
     {
         public static double operator +(double solde, Compte courant)
         {
