@@ -18,15 +18,14 @@ Courant courant = new Courant()
     Titulaire = johnDoe
 };
 
-Courant courant2 = new Courant()
+Epargne epargne = new Epargne()
 {
     Numero = "0002",
-    LigneDeCredit = 300,
     Titulaire = johnDoe
 };
 
 banque.Ajouter(courant);
-banque.Ajouter(courant2);
+banque.Ajouter(epargne);
 
 Console.WriteLine($"Depot de -100");
 banque["0001"].Depot(-100);
@@ -48,12 +47,12 @@ Console.WriteLine($"Depot de 1000");
 banque["0002"].Depot(1000);
 Console.WriteLine($"Nouveau solde : {banque["0002"].Solde}");
 
+banque["0001"].AppliquerInteret();
+Console.WriteLine($"Nouveau solde : {banque["0001"].Solde}");
+banque["0002"].AppliquerInteret();
+Console.WriteLine($"Nouveau solde : {banque["0002"].Solde}");
+
 Console.WriteLine($"Avoir des compte de {johnDoe.Prenom} {johnDoe.Nom} : {banque.AvoirDesComptes(johnDoe)}");
-
-
-
-
-
 
 //Autres Opérateur de cast
 Celsius celsius = new Celsius() { Temperature = 30 };
