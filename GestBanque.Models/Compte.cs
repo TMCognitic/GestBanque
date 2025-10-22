@@ -1,6 +1,6 @@
 ﻿namespace GestBanque.Models
 {
-    public class Compte
+    public abstract class Compte
     {
         public static double operator +(double solde, Compte courant)
         {
@@ -41,6 +41,13 @@
             }
 
             Solde -= montant;
+        }
+
+        protected abstract double CalculInteret();
+
+        public void AppliquerInteret()
+        {
+            Solde += CalculInteret();
         }
     }
 }
