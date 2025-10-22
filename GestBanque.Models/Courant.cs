@@ -19,6 +19,23 @@
             }
         }
 
+        public Courant(string numero, Personne titulaire) :
+            base(numero, titulaire)
+        {
+        }
+
+        public Courant(string numero, Personne titulaire, double solde)
+            : base(numero, titulaire, solde)
+        {
+        }
+
+        //Attention changement de l'ordre des paramètres pour avoir une surcharge de méthode valide
+        public Courant(string numero, double ligneDeCredit, Personne titulaire)
+            : base(numero, titulaire)
+        {
+            LigneDeCredit = ligneDeCredit;
+        }
+
         public override void Retrait(double montant)
         {
             Retrait(montant, LigneDeCredit);

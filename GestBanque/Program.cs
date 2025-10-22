@@ -2,27 +2,13 @@
 
 using GestBanque.Models.Divers;
 
-Banque banque = new Banque() { Nom = "TechnofuturBanking" };
+Banque banque = new Banque("TechnofuturBanking");
 
-Personne johnDoe = new Personne() 
-{ 
-    Nom = "Doe", 
-    Prenom = "John", 
-    DateNaiss = new DateTime(1970, 1, 1) 
-};
+Personne johnDoe = new Personne("Doe", "John", new DateTime(1970, 1, 1));
 
-Courant courant = new Courant()
-{
-    Numero = "0001",
-    LigneDeCredit = 300,
-    Titulaire = johnDoe
-};
+Courant courant = new Courant("0001", 300, johnDoe);
 
-Epargne epargne = new Epargne()
-{
-    Numero = "0002",
-    Titulaire = johnDoe
-};
+Epargne epargne = new Epargne("0002", johnDoe);
 
 banque.Ajouter(courant);
 banque.Ajouter(epargne);

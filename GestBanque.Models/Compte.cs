@@ -9,9 +9,21 @@ namespace GestBanque.Models
             return (solde < 0 ? 0 : solde) + (courant.Solde < 0 ? 0 : courant.Solde);
         }
 
-        public string Numero { get; set; }
+        public string Numero { get; }
         public double Solde { get; private set; }
-        public Personne Titulaire { get; set; }
+        public Personne Titulaire { get; }
+
+        protected Compte(string numero, Personne titulaire)
+        {
+            Numero = numero;
+            Titulaire = titulaire;
+        }
+
+        protected Compte(string numero, Personne titulaire, double solde)
+            : this(numero, titulaire)
+        {
+            Solde = solde;
+        }
 
         public void Depot(double montant)
         {
