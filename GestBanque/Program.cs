@@ -1,4 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+Banque banque = new Banque() { Nom = "TechnofuturBanking" };
+
 Personne johnDoe = new Personne() 
 { 
     Nom = "Doe", 
@@ -13,18 +16,20 @@ Courant courant = new Courant()
     Titulaire = johnDoe
 };
 
+banque.Ajouter(courant);
+
 Console.WriteLine($"Depot de -100");
-courant.Depot(-100);
+banque["0001"].Depot(-100);
 Console.WriteLine($"Nouveau solde : {courant.Solde}");
 Console.WriteLine($"Depot de 100");
-courant.Depot(100);
+banque["0001"].Depot(100);
 Console.WriteLine($"Nouveau solde : {courant.Solde}");
 Console.WriteLine($"Retrait de -100");
-courant.Retrait(-100);
+banque["0001"].Retrait(-100);
 Console.WriteLine($"Nouveau solde : {courant.Solde}");
 Console.WriteLine($"Retrait de 300");
-courant.Retrait(300);
+banque["0001"].Retrait(300);
 Console.WriteLine($"Nouveau solde : {courant.Solde}");
 Console.WriteLine($"Retrait de 500");
-courant.Retrait(500);
+banque["0001"].Retrait(500);
 Console.WriteLine($"Nouveau solde : {courant.Solde}");
